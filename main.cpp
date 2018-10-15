@@ -397,8 +397,8 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"seeds.litecoinca.sh", ""};
-static const string testnet_seeds[] = {"127.0.0.1", ""};
+static const string mainnet_seeds[] = {"seed.btcprivate.org", ""};
+static const string testnet_seeds[] = {"127.0.0.1", "rebase-testnet.btcprivate.co", ""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
@@ -455,10 +455,10 @@ int main(int argc, char **argv) {
   bool fDNS = true;
   if (opts.fUseTestNet) {
       printf("Using testnet.\n");
-      pchMessageStart[0] = 0xb6;
-      pchMessageStart[1] = 0xf5;
-      pchMessageStart[2] = 0xd3;
-      pchMessageStart[3] = 0xcf;
+      pchMessageStart[0] = 0xf4;
+      pchMessageStart[1] = 0x1c;
+      pchMessageStart[2] = 0xf5;
+      pchMessageStart[3] = 0xd4;
       seeds = testnet_seeds;
       fTestNet = true;
   }
